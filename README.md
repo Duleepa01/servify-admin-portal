@@ -4,13 +4,13 @@
 
 ---
 
-## 🖥️ Overview
+## Overview
 
 The Servify Admin Portal is a responsive single-page web application built with vanilla JavaScript and Firebase. It gives platform administrators full control over providers, customers, services, and bookings — all in real time.
 
 ---
 
-## ✨ Features
+## Features
 
 ### Dashboard
 - Live stats — Total Providers, Customers, Services, and Bookings
@@ -51,7 +51,7 @@ The Servify Admin Portal is a responsive single-page web application built with 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -64,7 +64,7 @@ The Servify Admin Portal is a responsive single-page web application built with 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 servify-admin/
@@ -85,7 +85,7 @@ servify-admin/
 
 ---
 
-## 🔥 Firebase Setup
+## Firebase Setup
 
 ### Firestore Collections
 
@@ -131,7 +131,7 @@ service firebase.storage {
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (for VS Code Live Server or Firebase CLI)
@@ -179,13 +179,13 @@ Right-click `splash.html` → **Open with Live Server**
 
 ---
 
-## 📱 Android App
+## Android App
 
 This admin portal is the web companion to the **Servify Android app** (Java), which allows customers to browse services, make bookings, and manage their profiles. Both share the same Firebase backend.
 
 ---
 
-## 🔐 Environment
+## Environment
 
 Never commit your `firebase.js` config with real credentials to a public repository. Use environment variables or Firebase App Hosting secrets for production deployments.
 
@@ -197,19 +197,19 @@ And provide a `js/firebase.example.js` with placeholder values for contributors.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-*Built with ❤️ using Firebase & vanilla JS*
+*Built using Firebase & vanilla JS*
 
 ---
 
-## 🔑 Firebase Configuration
+## Firebase Configuration
 
-Never commit your real `firebase.js` to a public repository. A template is provided as `js/firebase.example.js`.
+A template is provided as `js/firebase.example.js`.
 
 ### Setup steps
 1. Copy the example file:
