@@ -238,4 +238,3 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 ```
 
-> ⚠️ Make sure `js/firebase.js` is listed in your `.gitignore` so your real credentials are never committed.
