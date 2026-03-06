@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servify |Admin Profile|</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <style>
+body{
+  visibility:hidden;
+}
+</style>
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-icon"><span class="material-icons-round">hub</span></div>
+          <span class="brand-name">Servify</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html" class="nav-item" data-page="dashboard"><span class="material-icons-round nav-icon">dashboard</span><span class="nav-label">Dashboard</span></a></li>
+          <li><a href="index.html" class="nav-item" data-page="providers"><span class="material-icons-round nav-icon">handyman</span><span class="nav-label">Providers</span></a></li>
+          <li><a href="index.html" class="nav-item" data-page="services"><span class="material-icons-round nav-icon">category</span><span class="nav-label">Services</span></a></li>
+          <li><a href="index.html" class="nav-item" data-page="bookings"><span class="material-icons-round nav-icon">event_note</span><span class="nav-label">Bookings</span></a></li>
+          <li><a href="index.html" class="nav-item" data-page="customers"><span class="material-icons-round nav-icon">people</span><span class="nav-label">Customers</span></a></li>
+        </ul>
+      </nav>
+    <div class="sidebar-footer">
+  <a href="#" id="logoutBtn" class="nav-item logout-item">
+    <span class="material-icons-round nav-icon">logout</span>
+    <span class="nav-label">Logout</span>
+  </a>
+</div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="material-icons-round">menu</span>
+          </button>
+          <div class="breadcrumb-trail">
+            <a href="index.html" class="breadcrumb-link">Dashboard</a>
+            <span class="material-icons-round breadcrumb-sep">chevron_right</span>
+            <span class="page-title">My Profile</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button class="header-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="material-icons-round" id="themeIcon">dark_mode</span>
+          </button>
+          <a href="profile.html" class="admin-avatar" title="My Profile">A</a>
+        </div>
+      </header>
+
+      <main class="main-content">
+
+        <div class="profile-layout">
+
+          <div class="profile-sidebar-card card">
+            <div class="avatar-zone">
+              <div class="profile-avatar" id="profileAvatarDisplay">A</div>
+              <button class="avatar-edit-btn" id="avatarEditBtn" title="Change photo">
+                <span class="material-icons-round">photo_camera</span>
+              </button>
+              <input type="file" id="avatarFileInput" accept="image/*" />
+            </div>
+            <div class="profile-identity">
+              <h2 class="profile-name" id="sidebarName">Admin User</h2>
+              <span class="profile-role">Super Administrator</span>
+              <span class="profile-email-sub" id="sidebarEmail">admin@servify.com</span>
+            </div>
+            <div class="profile-meta-list">
+              <div class="profile-meta-item">
+                <span class="material-icons-round">schedule</span>
+                <span>Joined January 2024</span>
+              </div>
+              <div class="profile-meta-item">
+                <span class="material-icons-round">verified</span>
+                <span>Account Verified</span>
+              </div>
+              <div class="profile-meta-item">
+                <span class="material-icons-round">location_on</span>
+                <span id="sidebarLocation">San Francisco, CA</span>
+              </div>
+            </div>
+            <div class="profile-stats-row">
+              <div class="profile-stat">
+                <span class="profile-stat-value">247</span>
+                <span class="profile-stat-label">Actions</span>
+              </div>
+              <div class="profile-stat">
+                <span class="profile-stat-value">14</span>
+                <span class="profile-stat-label">Months Active</span>
+              </div>
+              <div class="profile-stat">
+                <span class="profile-stat-value">99%</span>
+                <span class="profile-stat-label">Uptime</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-main">
+
+            <div class="card profile-section">
+              <div class="profile-section-header">
+                <div class="section-label">
+                  <span class="material-icons-round">person</span>
+                  Personal Information
+                </div>
+                <button class="edit-toggle-btn" id="editInfoBtn">
+                  <span class="material-icons-round">edit</span>
+                  Edit
+                </button>
+              </div>
+
+              <div class="profile-fields" id="infoView">
+                <div class="field-row">
+                  <div class="field-display">
+                    <span class="field-label">Full Name</span>
+                    <span class="field-value" id="viewName">Admin User</span>
+                  </div>
+                  <div class="field-display">
+                    <span class="field-label">Username</span>
+                    <span class="field-value" id="viewUsername">@admin</span>
+                  </div>
+                </div>
+                <div class="field-row">
+                  <div class="field-display">
+                    <span class="field-label">Email Address</span>
+                    <span class="field-value" id="viewEmail">admin@servify.com</span>
+                  </div>
+                  <div class="field-display">
+                    <span class="field-label">Mobile Number</span>
+                    <span class="field-value" id="viewPhone">+1 555 000 0000</span>
+                  </div>
+                </div>
+                <div class="field-row">
+                  <div class="field-display">
+                    <span class="field-label">Location</span>
+                    <span class="field-value" id="viewLocation">San Francisco, CA</span>
+                  </div>
+                  <div class="field-display">
+                    <span class="field-label">Role</span>
+                    <span class="field-value">Super Administrator</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile-edit-form hidden" id="infoForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="editName">Full Name</label>
+                    <input type="text" id="editName" value="Admin User" />
+                  </div>
+                  <div class="form-group">
+                    <label for="editUsername">Username</label>
+                    <input type="text" id="editUsername" value="@admin" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="editEmail">Email Address</label>
+                    <input type="email" id="editEmail" value="admin@servify.com" />
+                  </div>
+                  <div class="form-group">
+                    <label for="editPhone">Mobile Number</label>
+                    <input type="tel" id="editPhone" value="+1 555 000 0000" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="editLocation">Location</label>
+                    <input type="text" id="editLocation" value="San Francisco, CA" />
+                  </div>
+                  <div class="form-group">
+                    <label>Role</label>
+                    <input type="text" value="Super Administrator" disabled />
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="ghost-btn" id="cancelInfoBtn">Cancel</button>
+                  <button class="primary-btn" id="saveInfoBtn">
+                    <span class="material-icons-round">save</span> Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card profile-section">
+              <div class="profile-section-header">
+                <div class="section-label">
+                  <span class="material-icons-round">lock</span>
+                  Change Password
+                </div>
+                <button class="edit-toggle-btn" id="editPwBtn">
+                  <span class="material-icons-round">edit</span>
+                  Change
+                </button>
+              </div>
+
+              <div class="profile-fields" id="pwView">
+                <div class="field-row">
+                  <div class="field-display">
+                    <span class="field-label">Current Password</span>
+                    <span class="field-value">••••••••••</span>
+                  </div>
+                  <div class="field-display">
+                    <span class="field-label">Last Changed</span>
+                    <span class="field-value">January 15, 2025</span>
+                  </div>
+                </div>
+                <div class="pw-strength-info">
+                  <span class="material-icons-round">shield</span>
+                  Your password meets security requirements.
+                </div>
+              </div>
+
+              <div class="profile-edit-form hidden" id="pwForm">
+                <div class="form-group">
+                  <label for="currentPw">Current Password</label>
+                  <div class="pw-input-wrap">
+                    <input type="password" id="currentPw" placeholder="Enter your current password" />
+                    <button class="pw-toggle" data-target="currentPw" type="button"><span class="material-icons-round">visibility</span></button>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="newPw">New Password</label>
+                    <div class="pw-input-wrap">
+                      <input type="password" id="newPw" placeholder="Min. 8 characters" />
+                      <button class="pw-toggle" data-target="newPw" type="button"><span class="material-icons-round">visibility</span></button>
+                    </div>
+                    <div class="strength-bar-wrap" id="strengthWrap">
+                      <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                      <span class="strength-label" id="strengthLabel"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPw">Confirm New Password</label>
+                    <div class="pw-input-wrap">
+                      <input type="password" id="confirmPw" placeholder="Re-enter new password" />
+                      <button class="pw-toggle" data-target="confirmPw" type="button"><span class="material-icons-round">visibility</span></button>
+                    </div>
+                    <span class="pw-match-msg" id="pwMatchMsg"></span>
+                  </div>
+                </div>
+                <div class="pw-requirements">
+                  <span class="req-item" id="req-len"><span class="material-icons-round">radio_button_unchecked</span>At least 8 characters</span>
+                  <span class="req-item" id="req-upper"><span class="material-icons-round">radio_button_unchecked</span>One uppercase letter</span>
+                  <span class="req-item" id="req-num"><span class="material-icons-round">radio_button_unchecked</span>One number</span>
+                  <span class="req-item" id="req-special"><span class="material-icons-round">radio_button_unchecked</span>One special character</span>
+                </div>
+                <div class="form-actions">
+                  <button class="ghost-btn" id="cancelPwBtn">Cancel</button>
+                  <button class="primary-btn" id="savePwBtn">
+                    <span class="material-icons-round">lock_reset</span> Update Password
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card profile-section">
+              <div class="profile-section-header">
+                <div class="section-label">
+                  <span class="material-icons-round">notifications</span>
+                  Notification Preferences
+                </div>
+              </div>
+              <div class="notif-prefs">
+                <div class="notif-pref-item">
+                  <div class="notif-pref-info">
+                    <span class="notif-pref-title">Provider Approval Alerts</span>
+                    <span class="notif-pref-desc">Get notified when new providers request approval</span>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <span class="toggle-knob"></span>
+                  </label>
+                </div>
+                <div class="notif-pref-item">
+                  <div class="notif-pref-info">
+                    <span class="notif-pref-title">Booking Cancellations</span>
+                    <span class="notif-pref-desc">Alerts when customers cancel bookings</span>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <span class="toggle-knob"></span>
+                  </label>
+                </div>
+                <div class="notif-pref-item">
+                  <div class="notif-pref-info">
+                    <span class="notif-pref-title">New Customer Registrations</span>
+                    <span class="notif-pref-desc">Notify when new users join the platform</span>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" checked />
+                    <span class="toggle-knob"></span>
+                  </label>
+                </div>
+                <div class="notif-pref-item">
+                  <div class="notif-pref-info">
+                    <span class="notif-pref-title">Weekly Summary Report</span>
+                    <span class="notif-pref-desc">Receive a weekly digest of platform activity</span>
+                  </div>
+                  <label class="toggle-switch">
+                    <input type="checkbox" />
+                    <span class="toggle-knob"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card profile-section danger-zone">
+              <div class="profile-section-header">
+                <div class="section-label red">
+                  <span class="material-icons-round">warning</span>
+                  Danger Zone
+                </div>
+              </div>
+              <div class="danger-actions">
+                <div class="danger-item">
+                  <div class="danger-info">
+                    <span class="danger-title">Sign out of all sessions</span>
+                    <span class="danger-desc">Revoke access from all devices and browsers</span>
+                  </div>
+                  <button class="ghost-btn danger-btn" id="signOutAllBtn">Sign Out All</button>
+                </div>
+                <div class="danger-item">
+                  <div class="danger-info">
+                    <span class="danger-title">Deactivate account</span>
+                    <span class="danger-desc">Temporarily disable admin access to the dashboard</span>
+                  </div>
+                  <button class="ghost-btn danger-btn" id="deactivateBtn">Deactivate</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="material-icons-round" id="toastIcon">check_circle</span>
+    <span id="toastMessage">Action completed.</span>
+  </div>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

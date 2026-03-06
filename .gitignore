@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+#js
+js/firebase.js

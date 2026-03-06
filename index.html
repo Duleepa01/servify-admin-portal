@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servify | Admin Dashboard |</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+body{
+  visibility:hidden;
+}
+</style>
+  </head>
+  <body>
+
+    <div class="app-shell">
+
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="brand">
+            <div class="brand-icon"><span
+                class="material-icons-round">hub</span></div>
+            <span class="brand-name">Servify</span>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#" class="nav-item active" data-page="dashboard"><span
+                  class="material-icons-round nav-icon">dashboard</span><span
+                  class="nav-label">Dashboard</span></a></li>
+            <li><a href="#" class="nav-item" data-page="providers"><span
+                  class="material-icons-round nav-icon">handyman</span><span
+                  class="nav-label">Providers</span></a></li>
+            <li><a href="#" class="nav-item" data-page="services"><span
+                  class="material-icons-round nav-icon">category</span><span
+                  class="nav-label">Services</span></a></li>
+            <li><a href="#" class="nav-item" data-page="bookings"><span
+                  class="material-icons-round nav-icon">event_note</span><span
+                  class="nav-label">Bookings</span></a></li>
+            <li><a href="#" class="nav-item" data-page="customers"><span
+                  class="material-icons-round nav-icon">people</span><span
+                  class="nav-label">Customers</span></a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <a href="#" id="logoutBtn" class="nav-item logout-item">
+            <span class="material-icons-round nav-icon">logout</span>
+            <span class="nav-label">Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <div class="main-wrapper">
+        <header class="top-header">
+          <div class="header-left">
+            <button class="menu-toggle" id="menuToggle"
+              aria-label="Toggle menu">
+              <span class="material-icons-round">menu</span>
+            </button>
+            <span class="page-title" id="pageTitle">Dashboard</span>
+          </div>
+          <div class="header-right">
+            <button class="header-btn theme-toggle" id="themeToggle"
+              aria-label="Toggle theme">
+              <span class="material-icons-round" id="themeIcon">dark_mode</span>
+            </button>
+
+            <div class="notif-wrap" id="notifWrap">
+              <button class="header-btn notif-btn" id="notifBtn"
+                aria-label="Notifications">
+                <span class="material-icons-round">notifications</span>
+                <span class="notif-count" id="notifCount"></span>
+              </button>
+              <div class="notif-panel" id="notifPanel">
+                <div class="notif-header">
+                  <span>Notifications</span>
+                  <button class="notif-clear" id="notifClear">Mark all
+                    read</button>
+                </div>
+                <div class="notif-list" id="notifList"></div>
+                <div class="notif-empty" id="notifEmpty">
+                  <span class="material-icons-round">notifications_none</span>
+                  <p>All caught up!</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="profile.html" class="admin-avatar"
+              aria-label="Admin profile" title="View Profile">A</a>
+          </div>
+        </header>
+
+        <main class="main-content">
+
+          <section class="page active" id="page-dashboard">
+            <div class="section-header">
+              <h2 class="section-title">Overview</h2>
+              <span class="section-subtitle">Welcome back, Admin</span>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card" data-color="blue">
+                <div class="stat-card-icon"><span
+                    class="material-icons-round">handyman</span></div>
+                <div class="stat-card-body">
+                  <span class="stat-label">Total Providers</span>
+                  <span class="stat-value" id="totalProviders">0</span>
+                  <span class="stat-trend up"><span
+                      class="material-icons-round">trending_up</span> +12% this
+                    month</span>
+                </div>
+              </div>
+              <div class="stat-card" data-color="amber">
+                <div class="stat-card-icon"><span
+                    class="material-icons-round">pending_actions</span></div>
+                <div class="stat-card-body">
+                  <span class="stat-label">Pending Approvals</span>
+                  <span class="stat-value" id="pendingProviders">0</span>
+                  <span class="stat-trend neutral"><span
+                      class="material-icons-round">schedule</span> Needs
+                    review</span>
+                </div>
+              </div>
+              <div class="stat-card" data-color="teal">
+                <div class="stat-card-icon"><span
+                    class="material-icons-round">people</span></div>
+                <div class="stat-card-body">
+                  <span class="stat-label">Total Customers</span>
+                  <span class="stat-value" id="totalCustomers">0</span>
+                  <span class="stat-trend up"><span
+                      class="material-icons-round">trending_up</span> +8% this
+                    month</span>
+                </div>
+              </div>
+              <div class="stat-card" data-color="violet">
+                <div class="stat-card-icon"><span
+                    class="material-icons-round">event_note</span></div>
+                <div class="stat-card-body">
+                  <span class="stat-label">Total Bookings</span>
+                  <span class="stat-value" id="totalBookings">0</span>
+                  <span class="stat-trend up"><span
+                      class="material-icons-round">trending_up</span> +5% this
+                    month</span>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-grid">
+              <div class="card recent-card">
+                <div class="card-header">
+                  <h3>Recent Bookings</h3>
+                  <button class="text-btn" data-page="bookings">View all <span
+                      class="material-icons-round">arrow_forward</span></button>
+                </div>
+                <div class="table-wrapper">
+                  <table class="data-table">
+                    <thead><tr><th>Customer</th><th>Service</th><th>Status</th><th>Date</th></tr></thead>
+                    <tbody id="recentBookingsBody"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card pending-card">
+                <div class="card-header">
+                  <h3>Pending Providers</h3>
+                  <button class="text-btn" data-page="providers">View all <span
+                      class="material-icons-round">arrow_forward</span></button>
+                </div>
+                <div class="pending-list" id="pendingProvidersList"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-providers">
+            <div class="section-header">
+              <h2 class="section-title">Providers</h2>
+              <span class="section-subtitle">Manage and approve service
+                providers</span>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>All Providers</h3>
+                <div class="header-controls">
+                  <div class="search-box">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" class="search-input" id="providerSearch"
+                      placeholder="Search providers..." />
+                    <button class="search-clear" id="providerSearchClear"><span
+                        class="material-icons-round">close</span></button>
+                  </div>
+                  <div class="filter-group">
+                    <button class="filter-btn active"
+                      data-filter="all">All</button>
+                    <button class="filter-btn"
+                      data-filter="Pending">Pending</button>
+                    <button class="filter-btn"
+                      data-filter="Approved">Approved</button>
+                  </div>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Name</th><th class="hide-sm">Email</th><th
+                        class="hide-md">Phone</th><th>Status</th><th>Actions</th></tr></thead>
+                  <tbody id="providersTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-services">
+            <div class="section-header">
+              <h2 class="section-title">Services</h2>
+              <span class="section-subtitle">Manage the service catalogue</span>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>All Services</h3>
+                <div class="header-controls">
+                  <div class="search-box">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" class="search-input" id="serviceSearch"
+                      placeholder="Search services..." />
+                    <button class="search-clear" id="serviceSearchClear"><span
+                        class="material-icons-round">close</span></button>
+                  </div>
+                  <button class="primary-btn" id="openAddServiceModal">
+                    <span class="material-icons-round">add</span>
+                    <span class="btn-label">Add Service</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Image</th><th>Service Name</th><th
+                        class="hide-sm">Base Price</th><th class="hide-md">Est.
+                        Duration</th><th>Status</th></tr></thead>
+                  <tbody id="servicesTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-bookings">
+            <div class="section-header">
+              <h2 class="section-title">Bookings</h2>
+              <span class="section-subtitle">Track all customer bookings</span>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>All Bookings</h3>
+                <div class="header-controls">
+                  <div class="search-box">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" class="search-input" id="bookingSearch"
+                      placeholder="Search bookings..." />
+                    <button class="search-clear" id="bookingSearchClear"><span
+                        class="material-icons-round">close</span></button>
+                  </div>
+                  <div class="filter-group">
+                    <button class="filter-btn active"
+                      data-filter="all">All</button>
+                    <button class="filter-btn"
+                      data-filter="Confirmed">Confirmed</button>
+                    <button class="filter-btn"
+                      data-filter="Pending">Pending</button>
+                    <button class="filter-btn"
+                      data-filter="Cancelled">Cancelled</button>
+                  </div>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Customer</th><th
+                        class="hide-sm">Service</th><th
+                        class="hide-md">Price</th><th>Status</th><th
+                        class="hide-sm">Date</th></tr></thead>
+                  <tbody id="bookingsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" id="page-customers">
+            <div class="section-header">
+              <h2 class="section-title">Customers</h2>
+              <span class="section-subtitle">All registered platform
+                users</span>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>All Customers</h3>
+                <div class="header-controls">
+                  <div class="search-box">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" class="search-input" id="customerSearch"
+                      placeholder="Search customers..." />
+                    <button class="search-clear" id="customerSearchClear"><span
+                        class="material-icons-round">close</span></button>
+                  </div>
+                  <div class="filter-group">
+                    <button class="filter-btn active"
+                      data-filter="all">All</button>
+                    <button class="filter-btn"
+                      data-filter="Approved">Approved</button>
+                    <button class="filter-btn"
+                      data-filter="Revoked">Revoked</button>
+                  </div>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead><tr><th>Name</th><th class="hide-sm">Email</th><th
+                        class="hide-md">Phone</th><th
+                        class="hide-lg">Address</th><th
+                        class="hide-sm">Joined</th><th>Approval</th><th>Action</th></tr></thead>
+                  <tbody id="customersTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="addServiceModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Add New Service</h3>
+          <button class="modal-close" id="closeModal"><span
+              class="material-icons-round">close</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="image-upload-zone" id="imageUploadZone">
+            <input type="file" id="serviceImageFile" accept="image/*" />
+            <div class="upload-placeholder" id="uploadPlaceholder">
+              <span class="material-icons-round">add_photo_alternate</span>
+              <span>Click or drag to upload image</span>
+              <small>PNG, JPG, WEBP — max 5MB</small>
+            </div>
+            <img class="upload-preview" id="uploadPreview" src
+              alt="Service preview" />
+            <button class="upload-remove" id="uploadRemove" type="button"><span
+                class="material-icons-round">close</span></button>
+          </div>
+          <div class="form-group">
+            <label for="serviceName">Service Name</label>
+            <input type="text" id="serviceName"
+              placeholder="e.g. Deep Home Cleaning" />
+          </div>
+          <div class="form-group">
+            <label for="serviceDescription">Description</label>
+            <textarea id="serviceDescription"
+              placeholder="Briefly describe what this service includes..."
+              rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="servicePrice">Base Price (LKR)</label>
+              <input type="number" id="servicePrice" placeholder="0.00" min="0"
+                step="0.01" />
+            </div>
+            <div class="form-group">
+              <label for="serviceDuration">Est. Duration</label>
+              <input type="text" id="serviceDuration"
+                placeholder="e.g. 2 hrs" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="serviceStatus">Status</label>
+            <select id="serviceStatus">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="ghost-btn" id="cancelModal">Cancel</button>
+          <button class="primary-btn" id="saveService"><span
+              class="material-icons-round">save</span> Save Service</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <span class="material-icons-round" id="toastIcon">check_circle</span>
+      <span id="toastMessage">Action completed.</span>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
